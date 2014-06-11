@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 public class ResourceConfig {
 
 	//默认解析匹配规则
-	private String regEx = "[\"|']?([\u4e00-\u9fa5|\\w]+)[\"|']?=[\"|']?(.+)[\"|']?";
+	private String regEx = "";
 	private boolean defSep = true;//是否使用默认解析格式
 	private String basePath;//项目启动目录
 	private Map<String, String> config;//解析后的key-value对
@@ -78,6 +78,9 @@ public class ResourceConfig {
 			}
 			resolveJson(f);
 		} else {
+				if(defSep){
+					regEx="[\"|']?([\u4e00-\u9fa5|\\w]+)[\"|']?=[\"|']?(.+)[\"|']?";
+				}
 			resolveProperties(f);
 		}
 	}
@@ -182,7 +185,7 @@ public class ResourceConfig {
 			}
 
 		}
-		// echo();
+		 echo();
 	}
 
 	/**
@@ -227,7 +230,7 @@ public class ResourceConfig {
 			}
 		}
 
-		// echo();
+		 echo();
 	}
 
 	/**

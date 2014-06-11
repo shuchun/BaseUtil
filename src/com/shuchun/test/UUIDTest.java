@@ -17,4 +17,10 @@ public class UUIDTest {
 		System.out.println(ids[0]);
 		UUIDUtil.getUUID(-1);
 	}
+	
+	@Test
+	public void getShortIDTest(){
+		assertEquals("TE1403240011",UUIDUtil.getShortID("OA1403240010","TE"));
+		assertEquals("OA1403240001",UUIDUtil.getShortID("OA1402010111"));
+	}
 }

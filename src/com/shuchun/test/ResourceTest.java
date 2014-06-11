@@ -22,7 +22,7 @@ public class ResourceTest {
 	public void loadTest()throws IOException{
 		//ResourceConfig con=new ResourceConfig();
 		//con.load("resource/test.csv");
-		con.load("resource/test.json");
+		//con.load("resource/test.json");
 	}
 	
 	@Test
@@ -32,14 +32,15 @@ public class ResourceTest {
 		assertEquals("value1",con.get("key1"));
 		assertEquals("Öµ",con.get("¼ü"));
 		assertNull(con.get("sdf"));
+		con.load("resource/test.txt");
+		assertEquals("value2",con.get("key2"));
+		assertEquals("b",con.get("a"));
 	}
 	
 	@Test
 	public void separatorTest() throws IOException{
-		con.load("resource/test.txt","@");
-		assertEquals("value1",con.get("key1"));
-		con.load("resource/test.txt", "?");
-		assertEquals("value1",con.get("key1"));
+		//con.load("resource/sep.txt", "?");
+		//assertEquals("value1",con.get("key1"));
 	}
 
 }

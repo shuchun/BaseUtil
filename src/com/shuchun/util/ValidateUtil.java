@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 /**
  * @see(功能描述):通用验证类
- * @author(作者): 杨树春
+ * @author(作者): shuchun
  * @version(版本):v1.0
  * @date(创建日期):2014-3-12
  */
